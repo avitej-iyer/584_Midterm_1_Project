@@ -4,12 +4,19 @@ The project explores three methods to predict which model generated a particular
 
 BERT trained model - [Drive link](https://drive.google.com/file/d/1aVrPPRMGvNT1ns89bP_ZAdCwEVwZo6cG/view?usp=sharing)
 
-First, unzip the model - 
-`!unzip "path-to-zipped-bert-model" -d "/content/bert_text_classifier"`
+First, install dependencies and unzip the model - 
+```
+!pip install numpy transformers scikit-learn joblib tensorflow
+!unzip "/content/bert_trained_model.zip" -d "/content/bert_text_classifier"
+```
 
 Then, you can use the model like so
 ```
-import numpy as np
+import numpy as np  # For numerical operations such as argmax
+from transformers import TFAutoModelForSequenceClassification, AutoTokenizer  # For loading the BERT model and tokenizer
+from sklearn.preprocessing import LabelEncoder  # Assuming 'le' is a label encoder for decoding predictions
+import joblib
+import tensorflow as tf
 
 # Load transformer model
 loaded_bert_model = TFAutoModelForSequenceClassification.from_pretrained('/content/bert_text_classifier/content/bert_text_classifier')
@@ -23,6 +30,8 @@ predictions = loaded_bert_model.predict(dict(new_tokens))
 
 # Get the index of the class with the highest logit (predicted class)
 predicted_class_idx = np.argmax(predictions.logits, axis=1)
+
+le = joblib.load("/content/bert_text_classifier/label_encoder.pkl")
 
 # Decode the predicted class index to get the original label (model name)
 predicted_model_name = le.inverse_transform(predicted_class_idx)
