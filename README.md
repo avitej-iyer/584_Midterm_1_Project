@@ -1,6 +1,6 @@
 # 584_Midterm_1_Project
 
-The project explores three methods to predict which model generated a particular phrase - Logistic Regression, a pretrained model (we used BERT) and using LSTMs. Google drive links for the saved trained models for LSTM and BERT are given below. Ways to utilize these models are also presented below.
+The project explores three methods to predict which model generated a particular phrase - Logistic Regression, a pretrained model (we used BERT) and using LSTMs. Google drive links for the saved trained models for LSTM and BERT are given below. Ways to utilize these trained models are also presented below.
 
 BERT trained model - [Drive link](https://drive.google.com/file/d/1IEPQqdtpMjXqp89rmzmV_5Otyf1l6KV4/view?pli=1)
 
@@ -30,7 +30,7 @@ predicted_model_name = le.inverse_transform(predicted_class_idx)
 print(f"Predicted model: {predicted_model_name[0]}")
 ```
 
-The LSTM model package can be downloaded here - [Drive link](https://drive.google.com/file/d/1M611jf3JYdwKd94vHt3yndH9cjb86K33/view?usp=sharing)
+The trained LSTM model can be downloaded here - [Drive link](https://drive.google.com/file/d/1M611jf3JYdwKd94vHt3yndH9cjb86K33/view?usp=sharing)
 
 And used as below, once it is uploaded to the session 
 ```
