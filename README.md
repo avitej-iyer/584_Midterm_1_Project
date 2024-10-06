@@ -12,9 +12,9 @@ First, install dependencies and unzip the model -
 
 Then, you can use the model like so
 ```
-import numpy as np  # For numerical operations such as argmax
-from transformers import TFAutoModelForSequenceClassification, AutoTokenizer  # For loading the BERT model and tokenizer
-from sklearn.preprocessing import LabelEncoder  # Assuming 'le' is a label encoder for decoding predictions
+import numpy as np
+from transformers import TFAutoModelForSequenceClassification, AutoTokenizer
+from sklearn.preprocessing import LabelEncoder 
 import joblib
 import tensorflow as tf
 
