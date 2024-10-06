@@ -41,13 +41,31 @@ print(f"Predicted model: {predicted_model_name[0]}")
 
 The trained LSTM model can be downloaded here - [Drive link](https://drive.google.com/file/d/19QJj6uX3yxuINm-Bu8Sjz_22t_OrRyeJ/view?usp=sharing)
 
+First, we install dependencies and extract our model : 
+```
+!pip install numpy transformers scikit-learn joblib tensorflow
+!unzip "/content/lstm_trained_model.zip" -d "/content/lstm_trained_model"
+```
+
 And used as below, once it is uploaded to the session 
 ```
-#loading and using the lstm model
-from tensorflow.keras.models import load_model
+import numpy as np  # For numerical operations such as argmax
+from tensorflow.keras.models import load_model  # For loading the LSTM model
+from tensorflow.keras.preprocessing.sequence import pad_sequences  # For padding sequences
+import joblib  # For loading the saved LabelEncoder
+import json 
+from tensorflow.keras.preprocessing.text import tokenizer_from_json
+
 
 # Load the saved LSTM model
-loaded_model = load_model('lstm_text_classifier_model.h5')
+loaded_model = load_model('/content/lstm_trained_model/lstm_text_classifier_model.h5')
+
+# Load the tokenizer from the JSON file
+with open('/content/lstm_trained_model/tokenizer.json') as file:
+    tokenizer_json = file.read()
+
+# Reconstruct the tokenizer from the JSON
+tokenizer = tokenizer_from_json(tokenizer_json)
 
 # Inputing new text into the model - change the text below to try out new phrases
 new_text = ["I spoke to my friend about a personal challenge I was facing, and their support and advice provided me with a new sense of clarity and direction."]
@@ -59,6 +77,8 @@ predicted_class = loaded_model.predict(new_padded)
 
 # Get the predicted class label (this will be in encoded form)
 predicted_label = np.argmax(predicted_class, axis=1)
+
+le = joblib.load("/content/lstm_trained_model/label_encoder.pkl")
 
 # Convert the encoded label back to the original model name
 predicted_model_name = le.inverse_transform(predicted_label)
