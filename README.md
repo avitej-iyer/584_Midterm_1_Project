@@ -2,7 +2,7 @@
 
 The project explores three methods to predict which model generated a particular phrase - Logistic Regression, a pretrained model (we used BERT) and using LSTMs. Google drive links for the saved trained models for LSTM and BERT are given below. Ways to utilize these trained models are also presented below.
 
-BERT trained model - [Drive link](https://drive.google.com/file/d/1A-lx25GbvyS-0odgYNFS4rjhtyyY6KRW/view?usp=sharing)
+BERT trained model - [Drive link](https://drive.google.com/file/d/1aVrPPRMGvNT1ns89bP_ZAdCwEVwZo6cG/view?usp=sharing)
 
 First, unzip the model - 
 `!unzip "path-to-zipped-bert-model" -d "/content/bert_text_classifier"`
