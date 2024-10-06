@@ -1,5 +1,7 @@
 # 584_Midterm_1_Project
 
+Group Members : Avitej Iyer, Siddharth Anmalsetty
+
 The project explores three methods to predict which model generated a particular phrase - Logistic Regression, a pretrained model (we used BERT) and using LSTMs. Google drive links for the saved trained models for LSTM and BERT are given below. Ways to utilize these trained models are also presented below.
 
 BERT trained model - [Drive link](https://drive.google.com/file/d/1aVrPPRMGvNT1ns89bP_ZAdCwEVwZo6cG/view?usp=sharing)
