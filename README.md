@@ -39,7 +39,7 @@ predicted_model_name = le.inverse_transform(predicted_class_idx)
 print(f"Predicted model: {predicted_model_name[0]}")
 ```
 
-The trained LSTM model can be downloaded here - [Drive link](https://drive.google.com/file/d/1M611jf3JYdwKd94vHt3yndH9cjb86K33/view?usp=sharing)
+The trained LSTM model can be downloaded here - [Drive link](https://drive.google.com/file/d/19QJj6uX3yxuINm-Bu8Sjz_22t_OrRyeJ/view?usp=sharing)
 
 And used as below, once it is uploaded to the session 
 ```
